@@ -8,7 +8,7 @@
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Maintainer: Jonas Bernoulli <jonas@bernoul.li>
 
-;; Package-Requires: ((emacs "24.4") (async "1.9"))
+;; Package-Requires: ((emacs "24.4"))
 ;; Keywords: tools
 ;; Homepage: https://github.com/magit/with-editor
 
@@ -84,11 +84,6 @@
 (eval-when-compile (require 'pcase))
 (require 'server)
 (require 'shell)
-
-(and (require 'async-bytecomp nil t)
-     (memq 'magit (bound-and-true-p async-bytecomp-allowed-packages))
-     (fboundp 'async-bytecomp-package-mode)
-     (async-bytecomp-package-mode 1))
 
 (eval-when-compile
   (progn (require 'dired nil t)
